@@ -1,0 +1,38 @@
+{
+  "threadCount": 8,
+  "host": "localhost",
+  "port": 8080,
+  "algorithm": "FFT",
+  "enable_background_collection": true,
+  "background_collection_interval_ms": 1000,
+  "max_metric_history": 1000,
+  "logging": {
+    "level": "info",
+    "file": "dataflow.log",
+    "console": true
+  },
+  "algorithms": {
+    "FFT": {
+      "window_size": 1024,
+      "use_hanning": true
+    },
+    "ImageProcessing": {
+      "filter_type": 0,
+      "kernel_size": 3
+    },
+    "MachineLearning": {
+      "model_path": "models/default_model.bin",
+      "confidence_threshold": 0.75
+    }
+  },
+  "network": {
+    "timeout_ms": 5000,
+    "buffer_size": 8192,
+    "max_connections": 100
+  },
+  "performance": {
+    "batch_size": 64,
+    "prefetch_count": 2,
+    "cache_size_mb": 256
+  }
+}
